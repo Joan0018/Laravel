@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Eloquent\Factory;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
