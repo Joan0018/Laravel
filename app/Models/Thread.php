@@ -7,15 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
-    use HasFactory;
-
-      /**
-     * The attributes that are mass assignable.
+    /**
+     * Fetch a path to the current thread.
      *
-     * @var array
+     * @return string
      */
-    protected $fillable = [
-        'title',
-        'body',
-    ];
+    public function path()
+    {
+        return '/threads/' . $this->id;
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }
